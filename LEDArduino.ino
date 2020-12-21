@@ -1,47 +1,47 @@
-// variables
-int GREEN = 2;
-int YELLOW = 3;
-int RED = 4;
-int REDS = 5;
-int GREENS = 6;
-int DELAY_GREEN = 5000;
-int DELAY_YELLOW = 2000;
-int DELAY_RED = 5000;
-int DELAY_REDS = 5000;
-int DELAY_GREENS = 5000;
+#define d digitalWrite 
+#define p pinMode
 
-// basic functions
+int g = 2;
+int y = 3;
+int r = 4;
+int rr = 5;
+int gg = 6;
+int DELAY_g = 5000;
+int DELAY_y = 2000;
+int DELAY_r = 5000;
+int DELAY_rr = 5000;
+int DELAY_gg = 5000;
 void setup()
 {
-  pinMode(GREEN, OUTPUT);
-  pinMode(YELLOW, OUTPUT);
-  pinMode(RED, OUTPUT);
-  pinMode(REDS, OUTPUT);
-  pinMode(GREENS, OUTPUT);
+  p(GREEN, OUTPUT);
+  p(YELLOW, OUTPUT);
+  p(RED, OUTPUT);
+  p(REDS, OUTPUT);
+  p(GREENS, OUTPUT);
 }
 
 void loop()
 {
-  green_light();
+  g_light();
   delay(DELAY_GREEN);
-  yellow_light();
+  y_light();
   delay(DELAY_YELLOW);
-  red_light();
+  r_light();
   delay(DELAY_RED);
-  reds_light();
+  rr_light();
   delay(DELAY_REDS);
-  greens_light();
+  gg_light();
   delay(DELAY_GREENS);
   
 }
 
-void green_light()
+void g_light()
 {
-  digitalWrite(GREEN, HIGH);
-  digitalWrite(YELLOW, LOW);
-  digitalWrite(RED, LOW);
-  digitalWrite(REDS, LOW);
-  digitalWrite(GREENS, LOW);
+  d(GREEN, HIGH);
+  d(YELLOW, LOW);
+  d(RED, LOW);
+  d(REDS, LOW);
+  d(GREENS, LOW);
 }
 
 void yellow_light()
