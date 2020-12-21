@@ -30,7 +30,7 @@ void loop()
   delay(DELAY_RED);
   reds_light();
   delay(DELAY_REDS);
-  greens_light()
+  greens_light();
   delay(DELAY_GREENS);
   
 }
