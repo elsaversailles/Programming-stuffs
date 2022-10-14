@@ -16,7 +16,7 @@ int main()
 	
 	n1k = (n1000>=1); //compare if the value is divisible
 	cout<<("1000: ");
-	cout<<(n1000); //print it for debug use
+	cout<<(n1000); //prints the total 1000 in value
 	
 	if (n1k >= 1){
 	amount1 = (amount - (n1000*1000)); //print the whole number remainder
@@ -28,7 +28,7 @@ int main()
 	
 	n500 = amount1/500; //2
 	cout<< ("\n \t 500: ");
-	cout<<(n500);
+	cout<<(n500); //prints the total 500 in value
 	cout<<("\t \n \t");
 	
 	n500k = (n500>=1); //checkline
@@ -54,13 +54,12 @@ int main()
 	n200k = (n200>=1);
 	cout<<("\n \t");
 	cout<<("200: ");
-	cout<<(n200k);
+	cout<<(n200k); //prints the total 200 in value
 	
 	if (n200k >= 1){
 	amount3 = (amount2 - (n200*200));
 	cout<<("\n");
 	//cout<<("\n amount3: ");
-	//cout<<amount3;
 	//cout<<n200k;
 	}
 	
@@ -72,13 +71,13 @@ int main()
 	n100k = (n100>=1);
 	cout<<("\n \t");
 	cout<<("100: ");
-	cout<<n100k;
+	cout<<(n100); //prints the total 100 in value
 	
 	if (n100k >= 1) {
 		amount4 = (amount3 - (n100*100)); //amount5 is the new value of amount if its divisbile by 100
 		cout<<("\n");
-		cout<<("\n amount4: ");
-		cout<<amount4;
+		//cout<<("\n amount4: ");
+		cout<<amount3;
 	}
 	
 	else
@@ -89,7 +88,7 @@ int main()
 	n50k = (n50>=1);
 	cout<<("\n \t");
 	cout<<("50: ");
-	cout<<n50k;
+	cout<<(n50k); //prints the total 50 in value
 	
 	if (n50k >= 1) {
 		amount5 = (amount4 - (n50*50)); //amount5 is the new value of amount if its divisbile by 50
@@ -110,16 +109,18 @@ int main()
 		amount6 = (amount5 - (n20*20)); //amount5 is the new value of amount if its divisbile by 100
 		cout<<("\n");
 		cout<<("20: ");
-		cout<<n20;
+		cout<<(n20); //prints the total 20 in value
 	}
 	
-	else  //compartmentalized
+	else  {//compartmentalized
 	amount6 = amount;
 	cout<<("\n 20: ");
 	cout<<n20k;
+}
+
+
 
 	n10 = amount6/10;
-	
 	n10k = (n10>=1);
 	cout<<("\n \t");
 	
@@ -128,40 +129,47 @@ int main()
 		amount7 = (amount6 - (n10*10)); //amount5 is the new value of amount if its divisbile by 10
 		cout<<("\n");
 		cout<<("10: ");
-		cout<<n10;
+		cout<<(n10); //prints the total 10 in value
 	}
 	
 	else{
 	amount7 = amount;
 	cout<<("\n 10: ");
-	cout<<n10k;
+	cout<<(n10k);
 }
+
+
 	n5 = amount7/5;
-	
 	n5k = (n5>=1);
 	cout<<("\n \t");
-	
-	if (n5k >= 1) {
+
+	if (n5 >= 2) {
+		cout<<("\n 5: 0");
+		goto peso;
+	}
+		
+	if (n5k == 1) {
 		amount8 = (amount7 - (n5*5)); //amount5 is the new value of amount if its divisbile by 5
 		cout<<("\n");
 		cout<<("5: ");
-		cout<<n5k;
+		cout<<(n5k); //prints the total 5 coins in value
 	}
 	
 	else{
 		amount8 = amount;
 		cout<<("\n 5: ");
-		cout<<n5k;
+		cout<<(n5k);
 
 	}
 	
+peso:
+	amount8 = (amount7 - (n5*5));
 	n1 = amount8/1;
-	
 	n1k = (n1>=1);
 	cout<<("\n \t");
 	
-
-	if (amount8 == 10){
+		
+	if (amount8 >= 10){
 		cout<<"\n 1: 0";
 		exit(0);
 	}
