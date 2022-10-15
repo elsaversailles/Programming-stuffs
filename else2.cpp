@@ -54,3 +54,38 @@ int main()
     }   
     
 }
+
+
+#include <iostream>
+using namespace std;
+int main()
+{ 
+   //create a program that will display if the given number is positive or negative and divisible by 2 and 5
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+    if (num > 0)
+    {
+       // cout << "The number is positive and divisible by 2 and 5" << endl;
+        if ((num % 2 == 0) && (num % 5 == 0))
+        {
+            cout << "The number is positive and divisible by 2 and 5" << endl;
+        }
+        else
+        {
+            cout << "The number is positive and NOT divisible by 2 and 5" << endl;
+        }
+    }
+    else if (num < 0)
+    {
+        if ((num % 2 == 0) && (num % 5 == 0))
+        {
+            cout << "The number is negative and divisible by 2 and 5" << endl;
+        }
+        else if ((num % 2 <= 0) && (num % 5 <= 0))
+        {
+            cout << "The number is negative and not divisible by 2 and 5" << endl;
+        }
+    }
+}
+
