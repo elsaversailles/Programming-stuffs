@@ -152,37 +152,74 @@ int main()
 
            cout << "Annual tax income: " << annual_tax_income << endl;
 
-           if (annual_tax_income <= 250000)
+                      if (annual_tax_income <= 250000)
            {
                tax_due = 0;
                cout << "Tax due: " << tax_due << endl;
            }
            else if (annual_tax_income >= 250001 && annual_tax_income <= 400000)
            {
-               tax_due = (annual_tax_income - 250000) * 0.20;
+               tax_due = (annual_tax_income - 250000) * 0.15;
                cout << "Tax due: " << tax_due << endl;
+           }
+           else if (annual_tax_income == 400000)
+           {
+               tax_due = annual_tax_income - 22500;
+               cout << "Tax due: " << tax_due << endl;
+ 
            }
            else if (annual_tax_income >= 400001 && annual_tax_income <= 800000)
            {
-               tax_due = (annual_tax_income - 400000) * 0.25;
+                tax_due = (annual_tax_income - 400000);
+               // tax_due = 192,800
+               tax_due = (tax_due * 0.20) + 22500 ;
                cout << "Tax due: " << tax_due << endl;
+ 
            }
+
+         else if (annual_tax_income == 800000)
+           {
+               tax_due = annual_tax_income - 102500;
+               cout << "Tax due: " << tax_due << endl;
+ 
+           }
+
+
            else if (annual_tax_income >= 800001 && annual_tax_income <= 2000000)
            {
-               tax_due = (annual_tax_income - 800000) * 0.30;
+               tax_due = (annual_tax_income - 800000);
+                tax_due = (tax_due * 0.25) + 102500 ;
                cout << "Tax due: " << tax_due << endl;
+ 
+           }
+
+           else if (annual_tax_income == 2000000)
+           {
+               tax_due = annual_tax_income - 402500;
+               cout << "Tax due: " << tax_due << endl;
+ 
            }
            else if (annual_tax_income >= 2000001 && annual_tax_income <= 8000000)
            {
-               tax_due = (annual_tax_income - 2000000) * 0.32;
+               tax_due = (annual_tax_income - 2000000);
+               tax_due = (tax_due * 0.30) + 402500 ;
                cout << "Tax due: " << tax_due << endl;
            }
+
+           else if (annual_tax_income == 8000000)
+           {
+               tax_due = annual_tax_income - 2202500;
+               cout << "Tax due: " << tax_due << endl;
+ 
+           }
+
            else if (annual_tax_income >= 8000001)
            {
-               tax_due = (annual_tax_income - 8000000) * 0.35;
+               tax_due = (annual_tax_income - 8000000);
+               tax_due = (tax_due * 0.35) + 2202500 ;
                cout << "Tax due: " << tax_due << endl;
            }
-       }
+   }
 
     if (marital_status == "Widow")
    {      // deduction = 0;
@@ -210,37 +247,73 @@ int main()
 
            cout << "Annual tax income: " << annual_tax_income << endl;
 
-           if (annual_tax_income <= 250000)
+                     if (annual_tax_income <= 250000)
            {
                tax_due = 0;
                cout << "Tax due: " << tax_due << endl;
            }
            else if (annual_tax_income >= 250001 && annual_tax_income <= 400000)
            {
-               tax_due = (annual_tax_income - 250000) * 0.20;
+               tax_due = (annual_tax_income - 250000) * 0.15;
                cout << "Tax due: " << tax_due << endl;
+           }
+           else if (annual_tax_income == 400000)
+           {
+               tax_due = annual_tax_income - 22500;
+               cout << "Tax due: " << tax_due << endl;
+ 
            }
            else if (annual_tax_income >= 400001 && annual_tax_income <= 800000)
            {
-               tax_due = (annual_tax_income - 400000) * 0.25;
+                tax_due = (annual_tax_income - 400000);
+               // tax_due = 192,800
+               tax_due = (tax_due * 0.20) + 22500 ;
                cout << "Tax due: " << tax_due << endl;
+ 
            }
+
+         else if (annual_tax_income == 800000)
+           {
+               tax_due = annual_tax_income - 102500;
+               cout << "Tax due: " << tax_due << endl;
+ 
+           }
+
+
            else if (annual_tax_income >= 800001 && annual_tax_income <= 2000000)
            {
-               tax_due = (annual_tax_income - 800000) * 0.30;
+               tax_due = (annual_tax_income - 800000);
+                tax_due = (tax_due * 0.25) + 102500 ;
                cout << "Tax due: " << tax_due << endl;
+ 
+           }
+
+           else if (annual_tax_income == 2000000)
+           {
+               tax_due = annual_tax_income - 402500;
+               cout << "Tax due: " << tax_due << endl;
+ 
            }
            else if (annual_tax_income >= 2000001 && annual_tax_income <= 8000000)
            {
-               tax_due = (annual_tax_income - 2000000) * 0.32;
+               tax_due = (annual_tax_income - 2000000);
+               tax_due = (tax_due * 0.30) + 402500 ;
                cout << "Tax due: " << tax_due << endl;
            }
+
+           else if (annual_tax_income == 8000000)
+           {
+               tax_due = annual_tax_income - 2202500;
+               cout << "Tax due: " << tax_due << endl;
+ 
+           }
+
            else if (annual_tax_income >= 8000001)
            {
-               tax_due = (annual_tax_income - 8000000) * 0.35;
+               tax_due = (annual_tax_income - 8000000);
+               tax_due = (tax_due * 0.35) + 2202500 ;
                cout << "Tax due: " << tax_due << endl;
            }
-       }
 
        if (marital_status == "HOF")
    {      // deduction = 0;
@@ -268,37 +341,73 @@ int main()
 
            cout << "Annual tax income: " << annual_tax_income << endl;
 
-           if (annual_tax_income <= 250000)
+                     if (annual_tax_income <= 250000)
            {
                tax_due = 0;
                cout << "Tax due: " << tax_due << endl;
            }
            else if (annual_tax_income >= 250001 && annual_tax_income <= 400000)
            {
-               tax_due = (annual_tax_income - 250000) * 0.20;
+               tax_due = (annual_tax_income - 250000) * 0.15;
                cout << "Tax due: " << tax_due << endl;
+           }
+           else if (annual_tax_income == 400000)
+           {
+               tax_due = annual_tax_income - 22500;
+               cout << "Tax due: " << tax_due << endl;
+ 
            }
            else if (annual_tax_income >= 400001 && annual_tax_income <= 800000)
            {
-               tax_due = (annual_tax_income - 400000) * 0.25;
+                tax_due = (annual_tax_income - 400000);
+               // tax_due = 192,800
+               tax_due = (tax_due * 0.20) + 22500 ;
                cout << "Tax due: " << tax_due << endl;
+ 
            }
+
+         else if (annual_tax_income == 800000)
+           {
+               tax_due = annual_tax_income - 102500;
+               cout << "Tax due: " << tax_due << endl;
+ 
+           }
+
+
            else if (annual_tax_income >= 800001 && annual_tax_income <= 2000000)
            {
-               tax_due = (annual_tax_income - 800000) * 0.30;
+               tax_due = (annual_tax_income - 800000);
+                tax_due = (tax_due * 0.25) + 102500 ;
                cout << "Tax due: " << tax_due << endl;
+ 
+           }
+
+           else if (annual_tax_income == 2000000)
+           {
+               tax_due = annual_tax_income - 402500;
+               cout << "Tax due: " << tax_due << endl;
+ 
            }
            else if (annual_tax_income >= 2000001 && annual_tax_income <= 8000000)
            {
-               tax_due = (annual_tax_income - 2000000) * 0.32;
+               tax_due = (annual_tax_income - 2000000);
+               tax_due = (tax_due * 0.30) + 402500 ;
                cout << "Tax due: " << tax_due << endl;
            }
+
+           else if (annual_tax_income == 8000000)
+           {
+               tax_due = annual_tax_income - 2202500;
+               cout << "Tax due: " << tax_due << endl;
+ 
+           }
+
            else if (annual_tax_income >= 8000001)
            {
-               tax_due = (annual_tax_income - 8000000) * 0.35;
+               tax_due = (annual_tax_income - 8000000);
+               tax_due = (tax_due * 0.35) + 2202500 ;
                cout << "Tax due: " << tax_due << endl;
            }
-       }
        
 
   }
@@ -310,6 +419,9 @@ int main()
 
     }
 
+    return 0;
 }
+    }
+    }
 
     
