@@ -27,10 +27,4 @@ int main()
         x++;
         cout << "answer = " << pw << endl;
     }
-
- 
-
-   
-
-
 }
