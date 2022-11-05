@@ -13,7 +13,7 @@ int main()
   for (int i = 1; i <= n; i++) 
   {
     nfact = nfact * i;
-   // cout << "Factorial of " << n << " is " << nfact << endl; //n factorial
+    cout << "Factorial of " << n << " is " << nfact << endl; //n factorial
   }
     x = (n-r);
     //cout << "n ";
@@ -23,21 +23,21 @@ int main()
     {
     nfact2 = nfact2 * i;
 
-   // cout << "factorial of (n-r) = " << x << " is " << nfact2 <<  endl; //(n-r) factorial
-  //  cout << x;  //cout (n-r)!
+    cout << "factorial of (n-r) = " << x << " is " << nfact2 <<  endl; //(n-r) factorial
+    cout << x;  //cout (n-r)!
     }
 
   int nfact3 = 1;
   for (int i = 1; i <= r; i++) 
   {
     nfact3 = nfact3 * i;
-    //cout << "Factorial of " << r << " is " << nfact3 << endl; //n factorial
+    cout << "Factorial of " << r << " is " << nfact3 << endl; //n factorial
   }
 
-  cout << "Combination = " << nfact / nfact2 * nfact3 << endl;
+  cout << "Combination = " << nfact / (nfact2 * nfact3) << endl;
 
 
-
+//40320 8-4 = 4, 4! = 24, 24&24
 
 }
 
