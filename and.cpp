@@ -6,7 +6,7 @@ int main()
 	int a=16, b=3, c=2, d=1;
 	
 	cout<< ("\n \t");
-	cout << ("not fix precedemce ");
+	cout << ("not fix precedence ");
 	cout << (c==2) && (a<2); 
 	//this returns 1 (true)
 	
