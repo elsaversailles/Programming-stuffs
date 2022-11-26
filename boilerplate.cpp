@@ -15,6 +15,7 @@ int main()
    // adding 10 numbers
     sum=sum+num;
   }
+//https://codescracker.com/cpp/program/cpp-program-insert-element-in-array.htm
      cout << "\n The sum of 10 numbers is: "<<sum << endl;
      return 0;
 }
