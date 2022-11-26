@@ -2,11 +2,8 @@
 using namespace std;
 int main()
 { 
-//ask user to input 5 numbers and display the sum of the numbers
-//and segregrate the positive and negative numbers
 int num, sum=0, userval, sum1 = 0, sum2 = 0, sum3 = 0 , sum4 = 0;
 int pos=0, neg=0;
-// cout<<"Please enter 10 numbers:"<<endl;
 cout<<"Enter number of Values: ";
 cin>>userval;
 for(int i=0; i<userval; i++)
@@ -45,21 +42,6 @@ sum=sum+num;
 
 // adding 10 numbers
 sum=sum+num;
-
-/*
-cout << "\n The sum of Positive numbers is: "<<sum1 << endl;
-cout << "\n The sum of Negative numbers is: "<<sum2 << endl;
-
-   cout << "\n Sum of Positive Even Numbers is: "<<sum1 << endl;
-
-
-   cout << "\n Sum of Positive Odd Numbers is: "<<sum1 << endl;
-
-   cout << "\n Sum of Negative Even Numbers is: "<<sum2 << endl;
-
-   cout << "\n Sum of Negative Odd Numbers is: "<<sum2 << endl;
-
-*/
 
 cout << "\n Sum of Positive Odd Numbers is: "<<sum2 << endl;
 cout << "\n Sum of Negative Odd Numbers is: "<<sum3 << endl;
