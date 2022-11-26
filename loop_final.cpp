@@ -62,8 +62,8 @@ cout << "\n The sum of Negative numbers is: "<<sum2 << endl;
 */
 
 cout << "\n Sum of Positive Odd Numbers is: "<<sum2 << endl;
-cout << "\n Sum of Positive Even Numbers is: "<<sum4 << endl;
 cout << "\n Sum of Negative Odd Numbers is: "<<sum3 << endl;
+cout << "\n Sum of Positive Even Numbers is: "<<sum4 << endl;
 cout << "\n Sum of Negative Even Numbers is: "<<sum1 << endl;
 return 0;
 }
