@@ -1,2 +1,2 @@
 # Programming💓💓🥰🥳😘
-A repo dedicated on my shitty code
+A repo dedicated to my shitty code
