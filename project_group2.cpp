@@ -75,6 +75,7 @@ else {
     cout << "The date is " << months[month] << " " << days[day] << ", " << year_words[year - YEAR_OFFSET] << " and it is " << holiday << endl;
 }
 
-  
+    //use this build command for .exe ( g++ -o project_group2.exe project_g2.cpp)
+  //otherwise this (g++ -o project project_g2.cpp)
 return 0;
 }
