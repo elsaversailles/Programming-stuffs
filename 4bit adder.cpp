@@ -7,7 +7,6 @@ int main()
     int bit1, bit2, bit3, bit4, bit5, bit6, bit7, bit8, pin_es1, pin_es2, pin_res10, pin_res11;
     int pin_res20, pin_res22, pin_res30, pin_res33, pin_res40, pin_res44, resbit1, resbit2, resbit3, resbit4;
     cout << "Enter first 4bit number: ";
-    //cin >> pin_a >> pin_b >> pin_c;
     cin >> bit1 >> bit2 >> bit3 >> bit4;
     cout << "Enter second 4bit number: ";
     cin >> bit5 >> bit6 >> bit7 >> bit8;
@@ -17,7 +16,7 @@ int main()
 //Adder 1
     pin_a1 = bit4;
     pin_b1 = bit8;
-     xor1 = (pin_a1 | pin_b1); 
+     xor1 = (pin_a1 | pin_b1); //AND gate
     if ((xor1 == 0)) 
     {
      nand2 = ((pin_a1 & pin_b1) == 1);
@@ -266,8 +265,8 @@ int main()
 //2nd and of adder
     and2 = (xor_out & pin_c4);
 //OR gate
-cout <<"and1: " << and1 << endl;
-cout <<"and2: " << and2 << endl;
+//cout <<"and1: " << and1 << endl;
+//cout <<"and2: " << and2 << endl;
     pin_res44 = (and1 | and2);
 
 /*
