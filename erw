@@ -1,0 +1,118 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int month, day, year;
+    cout << "Enter month (in numerical form): ";
+    cin >> month;
+    cout << "Enter day: ";
+    cin >> day;
+    cout << "Enter year: ";
+    cin >> year;
+
+    // Determine if leap year
+    bool leap = false;
+    if (year % 4 == 0) {
+        if (year % 100 == 0) {
+            if (year % 400 == 0) {
+                leap = true;
+            }
+        } else {
+            leap = true;
+        }
+    }
+
+    // Determine holiday
+    string holiday;
+    if (month == 1 && day == 1) {
+        holiday = "New Year's Day";
+    } else if (month == 7 && day == 4) {
+        holiday = "Independence Day";
+    } else if (month == 12 && day == 25) {
+        holiday = "Christmas Day";
+    } else {
+        holiday = "None";
+    }
+
+    // Output month as word
+    string monthWord;
+    switch (month) {
+        case 1:
+            monthWord = "January";
+            break;
+        case 2:
+            monthWord = "February";
+            break;
+        case 3:
+            monthWord = "March";
+            break;
+        case 4:
+            monthWord = "April";
+            break;
+        case 5:
+            monthWord = "May";
+            break;
+        case 6:
+            monthWord = "June";
+            break;
+        case 7:
+            monthWord = "July";
+            break;
+        case 8:
+            monthWord = "August";
+            break;
+        case 9:
+            monthWord = "September";
+            break;
+        case 10:
+            monthWord = "October";
+            break;
+        case 11:
+            monthWord = "November";
+            break;
+        case 12:
+            monthWord = "December";
+            break;
+        default:
+            monthWord = "Invalid month";
+            break;
+    }
+
+    // Output day and year as words
+    string dayWord, yearWord;
+    switch (day) {
+        case 1:
+            dayWord = "first";
+            break;
+        case 2:
+            dayWord = "second";
+            break;
+        case 3:
+            dayWord = "third";
+            break;
+        case 4:
+            dayWord = "fourth";
+            break;
+        case 5:
+            dayWord = "fifth";
+            break;
+        case 6:
+            dayWord = "sixth";
+            break;
+        case 7:
+            dayWord = "seventh";
+            break;
+        case 8:
+            dayWord = "eighth";
+            break;
+        case 9:
+            dayWord = "ninth";
+            break;
+        case 10:
+            dayWord = "tenth";
+            break;
+        case 11:
+            dayWord = "eleventh";
+            break;
+        case 12:
