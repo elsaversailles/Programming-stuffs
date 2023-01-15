@@ -106,6 +106,65 @@ if (month == 2){
     }
 }
 
+if (day >= 32){
+    cout << "\nInvalid date" << endl;
+    cout << "\n" << "Press X + Enter to Exit" << endl;
+    cin >> a;
+    return 0;
+}
+
+else if (day <= 0){
+    cout << "\nInvalid date" << endl;
+    cout << "\n" << "Press X + Enter to Exit" << endl;
+    cin >> a;
+    return 0;
+}
+
+else if (month == 2){ //Feb check
+    if (day >=30){
+        cout << "\nInvalid date" << endl;
+        cout << "\n" << "Press X + Enter to Exit" << endl;
+        cin >> a;
+        return 0;
+    }
+}
+
+else if (month == 4){
+    if (day >=31){ //April check
+        cout << "\nInvalid date" << endl;
+        cout << "\n" << "Press X + Enter to Exit" << endl;
+        cin >> a;
+        return 0;
+    }
+}
+
+else if (month == 6) {
+    if (day >=31){ //June check
+        cout << "\nInvalid date" << endl;
+        cout << "\n" << "Press X + Enter to Exit" << endl;
+        cin >> a;
+        return 0;
+    }
+}
+
+else if (month == 9) {
+    if (day >=31){  //Sep check
+        cout << "\nInvalid date" << endl;
+        cout << "\n" << "Press X + Enter to Exit" << endl;
+        cin >> a;
+        return 0;
+    }
+}
+
+else if (month == 11) {
+    if (day >=31){  //Nov check
+        cout << "\nInvalid date" << endl;
+        cout << "\n" << "Press X + Enter to Exit" << endl;
+        cin >> a;
+        return 0;
+    }
+}
+
 if (leap) {
     cout << "\n" << endl;
     cout << "The date is " << months[month] << " " << days[day] << ", " << year_words[year - YEAR_OFFSET] << " and it is a leap year, " << holiday << endl;
