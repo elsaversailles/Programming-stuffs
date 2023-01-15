@@ -172,6 +172,12 @@ if (leap) {
     cin >> a; //dummy pause
 
 }
+else if (leap == false && day == 29 && month == 2){ // This check if the year is leap year and if not check the day if 29 and if it is end the program
+    cout << "\n" << endl;
+    cout << "Given date is not leap year, Invalid Date" << endl;
+    cout << "\n" << "Press X + Enter to Exit" << endl;
+    cin >> a; //dummy pause
+}
 else if (holiday == "None") {
     cout << "\n" << endl;
     cout << "The date is " << months[month] << " " << days[day] << ", " << year_words[year - YEAR_OFFSET] << " and there's no holiday " << endl;
