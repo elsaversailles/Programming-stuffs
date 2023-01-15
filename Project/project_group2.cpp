@@ -3,6 +3,11 @@
 #include <cstdlib>
 using namespace std;
 
+struct Holiday {
+    int month;
+    int day;
+    string name;
+};
 int main() {
     int month, day, year, a;
     cout << "Enter month (in numerical form): ";
@@ -24,54 +29,37 @@ int main() {
         }
     }
 
-    // Determine holiday
-    string holiday;
-    if (month == 1 && day == 1) {
-        holiday = "New Year's Day";
-    } else if (month == 1 && day == 6) {
-        holiday = "Epiphany";
-    } else if (month == 3 && day == 19) {
-        holiday = "St. Joseph's Day";
-    } else if (month == 5 && day == 1) {
-        holiday = "Labor Day";
-    } else if (month == 6 && day == 12) {
-        holiday = "Independence Day";
-    } else if (month == 8 && day == 15) {
-        holiday = "Assumption Day";
-    } else if (month == 11 && day == 1) {
-        holiday = "All Saints' Day";
-    } else if (month == 11 && day == 2) {
-        holiday = "All Souls' Day";
-    } else if (month == 11 && day == 30) {
-        holiday = "Bonifacio Day";
-    } else if (month == 12 && day == 8) {
-        holiday = "Immaculate Conception";
-    } else if (month == 12 && day == 24) {
-        holiday = "Christmas Eve";
-    } else if (month == 12 && day == 25) {
-        holiday = "Christmas Day";
-    } else if (month == 4 && day == 6) {
-        holiday = "Maundy Thursday";
-    }else if (month == 4 && day == 7) {
-        holiday = "Maundy Friday";
-    } else if (month == 4 && day == 10) {
-        holiday = "Day of Valor";
-    } else if (month == 5 && day == 1){
-        holiday = "Labor Day";
-    } else if (month == 4 && day == 7){
-        holiday = "Good Friday";
-    } else if (month == 8 && day == 28){
-        holiday = "National Heroes Day";
-    } else if (month == 12 && day == 30){
-        holiday = "Rizal Day";
-    } else if (month == 12 && day == 31){
-        holiday = "Last Day of the Year";
+      // Create array of holidays
+    Holiday holidays[] = {
+        {1, 1, "New Year's Day"},
+        {1, 6, "Epiphany"},
+        {3, 19, "St. Joseph's Day"},
+        {4, 6, "Maundy Thursday"},
+        {4, 7, "Good Friday"},
+        {4, 10, "Day of Valor"},
+        {5, 1, "Labor Day"},
+        {6, 12, "Independence Day"},
+        {8, 15, "Assumption Day"},
+        {8, 28, "National Heroes Day"},
+        {11, 1, "All Saints' Day"},
+        {11, 2, "All Souls' Day"},
+        {11, 30, "Bonifacio Day"},
+        {12, 8, "Immaculate Conception"},
+        {12, 24, "Christmas Eve"},
+        {12, 25, "Christmas Day"},
+        {12, 30, "Rizal Day"},
+        {12, 31, "Last Day of the Year"}
+    };
+
+    // Check for holiday
+    string holiday = "None";
+    for (int i = 0; i < sizeof(holidays)/sizeof(Holiday); i++) {
+        if (holidays[i].month == month && holidays[i].day == day) {
+            holiday = holidays[i].name;
+            break;
+        }
     }
 
-    
-    else {
-        holiday = "None";
-    }
 
     // Month array
     string months[] = {"Invalid month", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
@@ -96,98 +84,108 @@ int main() {
    enum year_offset {YEAR_OFFSET = 1970}; //Magic Sauce :)
 string year_words[58] = {"Invalid year", "nineteen seventy one", "nineteen seventy two", "nineteen seventy three", "nineteen seventy four", "nineteen seventy five", "nineteen seventy six", "nineteen seventy seven", "nineteen seventy eight", "nineteen seventy nine", "nineteen eighty", "nineteen eighty one", "nineteen eighty two", "nineteen eighty three", "nineteen eighty four", "nineteen eighty five", "nineteen eighty six", "nineteen eighty seven", "nineteen eighty eight", "nineteen eighty nine", "nineteen ninety", "nineteen ninety one", "nineteen ninety two", "nineteen ninety three", "nineteen ninety four", "nineteen ninety five", "nineteen ninety six", "nineteen ninety seven", "nineteen ninety eight", "nineteen ninety nine", "two thousand", "two thousand one", "two thousand two", "two thousand three", "two thousand four", "two thousand five", "two thousand six", "two thousand seven", "two thousand eight", "two thousand nine", "two thousand ten", "two thousand eleven", "two thousand twelve", "two thousand thirteen", "two thousand fourteen", "two thousand fifteen", "two thousand sixteen", "two thousand seventeen", "two thousand eighteen", "two thousand nineteen", "two thousand twenty", "two thousand twenty one", "two thousand twenty two", "two thousand twenty three"};
 
+string error_msg = "\nInvalid date \nPress X + Enter to Exit";
+string exit_msg = "\nPress X + Enter to Exit";
 
 if (month == 2){
     if (day >=30){
-        cout << "\nInvalid date" << endl;
-        cout << "\n" << "Press X + Enter to Exit" << endl;
+        cout << error_msg << endl;
         cin >> a;
-        return 0;
     }
 }
 
-if (day >= 32){
-    cout << "\nInvalid date" << endl;
-    cout << "\n" << "Press X + Enter to Exit" << endl;
+if (year <=1969) {
+    cout << error_msg << endl;
     cin >> a;
-    return 0;
+    terminate(); //this exist because of a bug that keeps the program running even after an error
+}
+
+if (year >= 2024) {
+    cout << error_msg << endl;
+    cin >> a;
+    terminate();
+}
+
+if (day >= 32){
+    cout << error_msg << endl;
+    cin >> a;
 }
 
 else if (day <= 0){
-    cout << "\nInvalid date" << endl;
-    cout << "\n" << "Press X + Enter to Exit" << endl;
+    cout << error_msg << endl;
     cin >> a;
-    return 0;
+}
+    
+else if (month <= 0){
+    cout << error_msg << endl;
+    cin >> a;
+}
+
+else if (month >= 13){ //check if month is greater than 13
+    cout << error_msg << endl;
+    cin >> a;
 }
 
 else if (month == 2){ //Feb check
     if (day >=30){
-        cout << "\nInvalid date" << endl;
-        cout << "\n" << "Press X + Enter to Exit" << endl;
+        cout << error_msg << endl;
         cin >> a;
-        return 0;
     }
 }
 
 else if (month == 4){
     if (day >=31){ //April check
-        cout << "\nInvalid date" << endl;
-        cout << "\n" << "Press X + Enter to Exit" << endl;
+        cout << error_msg << endl;
         cin >> a;
-        return 0;
     }
 }
 
 else if (month == 6) {
     if (day >=31){ //June check
-        cout << "\nInvalid date" << endl;
-        cout << "\n" << "Press X + Enter to Exit" << endl;
+        cout << error_msg << endl;
         cin >> a;
-        return 0;
     }
 }
 
 else if (month == 9) {
     if (day >=31){  //Sep check
-        cout << "\nInvalid date" << endl;
-        cout << "\n" << "Press X + Enter to Exit" << endl;
+        cout << error_msg << endl;
         cin >> a;
-        return 0;
     }
 }
 
 else if (month == 11) {
     if (day >=31){  //Nov check
-        cout << "\nInvalid date" << endl;
-        cout << "\n" << "Press X + Enter to Exit" << endl;
+        cout << error_msg << endl;
         cin >> a;
-        return 0;
     }
 }
 
+
+// Print Part
 if (leap) {
     cout << "\n" << endl;
     cout << "The date is " << months[month] << " " << days[day] << ", " << year_words[year - YEAR_OFFSET] << " and it is a leap year, " << holiday << endl;
-    cout << "\n" << "Press X + Enter to Exit" << endl;
+    cout << exit_msg << endl;
     cin >> a; //dummy pause
 
 }
 else if (leap == false && day == 29 && month == 2){ // This check if the year is leap year and if not check the day if 29 and if it is end the program
     cout << "\n" << endl;
     cout << "Given date is not leap year, Invalid Date" << endl;
-    cout << "\n" << "Press X + Enter to Exit" << endl;
+    cout << exit_msg << endl;
     cin >> a; //dummy pause
 }
 else if (holiday == "None") {
     cout << "\n" << endl;
     cout << "The date is " << months[month] << " " << days[day] << ", " << year_words[year - YEAR_OFFSET] << " and there's no holiday " << endl;
-    cout << "\n" << "Press X + Enter to Exit" << endl;
+    cout << exit_msg << endl;
     cin >> a; //dummy pause
 }
 else {
     cout << "\n" << endl;
     cout << "The date is " << months[month] << " " << days[day] << ", " << year_words[year - YEAR_OFFSET] << " and it is " << holiday << endl;
-    cout << "\n" << "Press X + Enter to Exit" << endl;
+    cout << exit_msg << endl;
     cin >> a; //dummy pause
 }
 
