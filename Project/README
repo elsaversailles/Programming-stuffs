@@ -7,4 +7,6 @@ The executable would fail if you have 32bit version of libwinpthread on x64bit C
 
 If you're compiling from source use this build flags:
 
-g++ -static-libstdc++ -static-libgcc main.cpp -o main.exe
+g++ -static-libstdc++ -static-libgcc project_group2.cpp -o project.exe
+
+Then add the libwinpthread in the same directory as this executable 
