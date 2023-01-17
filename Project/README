@@ -2,7 +2,7 @@ The executable must be unzip first so it can find libwinpthread.dll
 
 Also, this dll is x64 base so if you're running 32bit processor you'll need to install 32bit version of this dll. I didn't include it since most CPU today are 64bit anyway.
 
-The executable would fail if you have 32bit version of libwinpthread on x64bit CPU and vice versa (ask me how I know 😑)
+The executable would fail if you have 32bit version of libwinpthread on x64 CPU and vice versa (ask me how I know 😑)
 
 If you're compiling from source use this build flags: (gcc/g++)
 
