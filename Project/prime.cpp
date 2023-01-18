@@ -71,16 +71,24 @@ string convert(int n) {
 }
 
 int main() {
-    int num;
+    int num, a;
 cout << "Enter a number between 1 and 9999: ";
 cin >> num;
 if(num>=1 && num<=9999){
-if (isPrime(num))
-cout << convert(num) << endl;
-else
-cout << num << " is not a prime number." << endl;
-}else{
+    if (isPrime(num)){
+    cout << convert(num) << endl;
+    cout << "Press X + Enter to exit" << endl;
+    cin >> a;
+    }
+    else
+    cout << num << " is not a prime number." << endl;
+    cout << "Press X + Enter to exit" << endl;
+    cin >> a;
+}
+else{
 cout << "Invalid input"<<endl;
+cout << "Press X + Enter to exit" << endl;
+cin >> a;
 }
 return 0;
 }
