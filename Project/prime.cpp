@@ -11,7 +11,7 @@ Number ones[] = {{1,"one"},{2,"two"},{3,"three"},{4,"four"},{5,"five"},{6,"six"}
 Number tens[] = {{2,"twenty"},{3,"thirty"},{4,"forty"},{5,"fifty"},{6,"sixty"},{7,"seventy"},{8,"eighty"},{9,"ninety"}};
 Number teens[] = {{10,"ten"},{11,"eleven"},{12,"twelve"},{13,"thirteen"},{14,"fourteen"},{15,"fifteen"},{16,"sixteen"},{17,"seventeen"},{18,"eighteen"},{19,"nineteen"}};
 
-bool isPrime(int num) {
+bool isPrime(int num) { //check if number is prime
     if (num <= 1) 
         return false;
     if (num <= 3) 
@@ -24,7 +24,7 @@ bool isPrime(int num) {
     return true;
 }
 
-string convert(int num) {
+string convert(int num) { //converts intteger value to words using array
     if (num < 10) {
         for (int i = 0; i < 9; i++) {
             if (ones[i].value == num) {
@@ -69,13 +69,14 @@ string convert(int num) {
         result += convert(num%1000);
         return result;
     }
-return EXIT_SUCCESS;
+return EXIT_SUCCESS; //used to extinguish compile warning
 }
 
-int debugger(){
+int debugger(){ //built in tester
     int num, largestPrime = 0;
-    cout << "Enter a number: ";
+    cout << "Enter number to check: ";
     cin >> num;
+    if (num >=1 && num <= 9999){
     for (int i = num; i > 0; i--) {
         if (isPrime(i)) {
             largestPrime = i;
@@ -83,20 +84,19 @@ int debugger(){
         }
     }
     cout << "The largest prime number in the range up to " << num << " is: " << largestPrime << endl;
+    return num;
     }
-
-int main() {
-    int num, a;
-cout << "Enter a number between 1 and 9999: ";
-cin >> num;
-if (num == 0){
-    debugger();
-    cout << "\nPress X + Enter to exit" << endl;
-    cin >> a;
-    terminate();
+    else{
+        cout << "Invalid input" << endl;
+        return 0;
+    }
 }
+int main() { //main function
+    int num, a;
+    cout << "Enter a number between 1 and 9999 \n0 invokes Prime checker: " << endl;
+    cin >> num;
 
-else if(num>=1 && num<=9999){
+if(num>=1 && num<=9999){ ///check if the number is in range
     if (isPrime(num)){
     cout <<"\n" << convert(num) <<" is a prime number" << endl;
     cout << "\nPress X + Enter to exit" << endl;
@@ -108,7 +108,13 @@ else if(num>=1 && num<=9999){
     cout << "\nPress X + Enter to exit" << endl;
     cin >> a;
 }
-else{
+if (num == 0){ //check if tester should be invoked
+    debugger();
+    cout << "\nPress X + Enter to exit" << endl;
+    cin >> a;
+    terminate();
+}
+else{ //catch all
 cout << "\nInvalid input"<<endl;
 cout << "\nPress X + Enter to exit" << endl;
 cin >> a;
