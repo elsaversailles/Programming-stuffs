@@ -16,11 +16,7 @@ bool isPrime(int num) { //check if number is prime
         return false;
     if (num <= 3) 
         return true;
-    if (num % 2 == 0 || num % 3 == 0) 
-        return false;
-    for (int i = 5; i * i <= num; i = i + 6) 
-        if (num % i == 0 || num % (i + 2) == 0) 
-            return false;
+   
     return true;
 }
 
@@ -83,14 +79,7 @@ int debugger(){ //built in tester
             break;
         }
     }
-    cout << "The largest prime number in the range up to " << num << " is: " << largestPrime << endl;
-    return num;
-    }
-    else{
-        cout << "Invalid input" << endl;
-        return 0;
-    }
-}
+  
 int main() { //main function
     int num, a;
     cout << "Enter a number between 1 and 9999 \n0 invokes Prime checker: " << endl;
