@@ -9,3 +9,5 @@ If you're compiling from source use this build flags: (gcc/g++)
 gcc -static-libstdc++ -static-libgcc project_group2.cpp -o project.exe
 
 Then add the libwinpthread.dll in the same directory as this executable 
+
+I PASSED! 🥳🥳
