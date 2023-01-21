@@ -11,13 +11,17 @@ Number ones[] = {{1,"one"},{2,"two"},{3,"three"},{4,"four"},{5,"five"},{6,"six"}
 Number tens[] = {{2,"twenty"},{3,"thirty"},{4,"forty"},{5,"fifty"},{6,"sixty"},{7,"seventy"},{8,"eighty"},{9,"ninety"}};
 Number teens[] = {{10,"ten"},{11,"eleven"},{12,"twelve"},{13,"thirteen"},{14,"fourteen"},{15,"fifteen"},{16,"sixteen"},{17,"seventeen"},{18,"eighteen"},{19,"nineteen"}};
 
-bool isPrime(int num) { //check if number is prime
+bool isPrim(int num) { //check if number is prime
     if (num <= 1) 
         return false;
     if (num <= 3) 
         return true;
-   
-    return true;
+    if (num % 2 == 0 || num % 3 == 0) 
+        return false;
+    for (int i = 5; i * i <= num; i = i + 6) 
+        if (num % i == 0 || num % (i + 2) == 0) 
+            return false;
+    return true
 }
 
 string convert(int num) { //converts intteger value to words using array
@@ -27,11 +31,11 @@ string convert(int num) { //converts intteger value to words using array
                 return ones[i].name;
             }
         }
-    } else if (num < 20) {
+    } else (num < 20) {
         for (int i = 0; i < 10; i++) {
             if (teens[i].value == num) {
                 return teens[i].name;
-            }
+            }s
         }
     } else if (num < 100) {
         string result = "";
@@ -65,7 +69,7 @@ string convert(int num) { //converts intteger value to words using array
         result += convert(num%1000);
         return result;
     }
- EXIT_SUCCESS; //used to extinguish compile warning
+return EXIT_SUCCESS; //used to extinguish compile warning
 }
 
 int debugger(){ //built in tester
@@ -79,7 +83,14 @@ int debugger(){ //built in tester
             break;
         }
     }
-  
+    cout << "The largest prime number in the range up to " << num << " is: " << largestPrime << endl;
+    return num;
+    }
+    else{
+        cout << "Invalid input" << endl;
+        return 0;
+    }
+}
 int main() { //main function
     int num, a;
     cout << "Enter a number between 1 and 9999 \n0 invokes Prime checker: " << endl;
@@ -93,7 +104,7 @@ if(num>=1 && num<=9999){ ///check if the number is in range
     terminate();
     }
     else
-    cout << "\n" << num << " is not a prime " << endl;
+    cout << "\n" << num << " is not a prime number" << endl;
     cout << "\nPress X + Enter to exit" << endl;
     cin >> a;
 }
