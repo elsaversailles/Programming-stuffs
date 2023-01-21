@@ -65,7 +65,7 @@ string convert(int num) { //converts intteger value to words using array
         result += convert(num%1000);
         return result;
     }
-return EXIT_SUCCESS; //used to extinguish compile warning
+ EXIT_SUCCESS; //used to extinguish compile warning
 }
 
 int debugger(){ //built in tester
@@ -93,7 +93,7 @@ if(num>=1 && num<=9999){ ///check if the number is in range
     terminate();
     }
     else
-    cout << "\n" << num << " is not a prime number" << endl;
+    cout << "\n" << num << " is not a prime " << endl;
     cout << "\nPress X + Enter to exit" << endl;
     cin >> a;
 }
