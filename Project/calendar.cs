@@ -18,9 +18,9 @@ namespace Calendar
             InitializeComponent();
         }
 
-        public int month = 0;
-        int day = 0;
-        int year = 0;
+        public int month = 0; //this f*cker allows you to access private var to public 5hrs troubleshoot boys
+        public int day = 0;
+        public int year = 0;
         int a = 2;
        
         private void monthbox_TextChanged_1(object sender, EventArgs e)
@@ -57,9 +57,9 @@ namespace Calendar
             // If the parsing was successful, use the userInput variable
             if (success)
             {
-                int day = int.Parse(daybox.Text);
-               
-              //  MessageBox.Show("The day is " + day);//has a tendency to loop the message box
+                day = userInput;
+
+                //  MessageBox.Show("The day is " + day);//has a tendency to loop the message box
             }
             else
             {
@@ -78,9 +78,7 @@ namespace Calendar
             // If the parsing was successful, use the userInput variable
             if (success)
             {
-                //int userInput = int.Parse(monthbox.Text);
-                int year = userInput;
-                //MessageBox.Show("The day is " + year);//has a tendency to loop the message box
+                year = userInput;
             }
             else
             {
@@ -95,9 +93,11 @@ namespace Calendar
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-
+            //import public var and reassign it as private var
             int valueOfMonth = month;
-            MessageBox.Show("Month: " + valueOfMonth);
+            int valueOfDay = day;
+            int valueOfYear = year;
+            MessageBox.Show("Month: " + valueOfMonth + " Day: " + valueOfDay + " Year: " + valueOfYear);
             //we need to export the private assigned valuess of 3 var to public or point them here
         }
 
