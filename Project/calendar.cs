@@ -28,28 +28,22 @@ namespace Calendar
         {
 
         }
-
         private void monthLabel_Click(object sender, EventArgs e)
         {
 
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
-        
         private void dayLabel_Click(object sender, EventArgs e)
         {
 
         }
-
         private void monthbox_TextChanged_1(object sender, EventArgs e)
         {
             // Create a variable to store the user input
@@ -61,9 +55,7 @@ namespace Calendar
             if (success)
             {
              //make month public
-                
                 month = userInput;
-               
             }
             else
             {
