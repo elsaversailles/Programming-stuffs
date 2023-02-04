@@ -1,6 +1,9 @@
 #include <LiquidCrystal_I2C.h>
 #define BUZZER 5
 
+//AUTOMATIC VERSION
+
+
 LiquidCrystal_I2C lcd(0x27, 16, 2); // I2C address 0x27, 16 column and 2 rows
 
 void setup()
@@ -19,7 +22,7 @@ tone(BUZZER, 2000); // play a tone of frequency 1000 Hz
 delay(75); // wait for half a second
 noTone(BUZZER); // stop the tone
 delay(75); // wait for half a second
-tone(BUZZER, 2000); // play a tone of frequency 2000 Hz
+tone(BUZZER, 2000); // play a tone of frequency 2000 Hz 1700 is stable
 delay(75); // wait for half a second
 noTone(BUZZER); // stop the tone
 delay(75); // wait for half a second
