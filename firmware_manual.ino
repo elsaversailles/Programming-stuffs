@@ -61,6 +61,7 @@ a:
 
 lcd.clear();
 digitalWrite(2, LOW);
+digitalWrite(4, LOW);
 delay(500);
 digitalWrite(3, HIGH);
 lcd.clear();
