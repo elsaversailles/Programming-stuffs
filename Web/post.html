@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activity</title>
-	  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light" id="navbarTop">
+	<nav class="navbar fixed-top navbar-expand-lg navbar-light" id="navbarTop">
     <button class="navbar-toggler d-lg-block" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand mx-auto" href="#" style="color: white; text-align: center;">Home
+    <a class="navbar-brand mx-auto" href="#" style="color: white; text-align: center;">Post
       <a href="#" id="prevLink"> <img src="resources/Pics/left-arrow.png" style="position: relative; top: 0; right: 0; width: 35px;">
       </a>
     </a> 
@@ -70,60 +71,45 @@ document.getElementById("prevLink").href = previousUrl;
 		  </ul>
 		</div>
 	  </nav> 
+	  
+<div class="spacer_60px"></div>
 
-<h2 id="paragraph">I'm Elsa Versailles!</h2>
-<hr style="height: 2px; border-top: 2px solid #ffffff1f; padding-left: 10px; padding-right: 10px;">
-<div class="spacer_20px"></div>
 <div class="container">
-	<div class="row justify-content-center">
-	  <div class="col-12 col-md-6 text-center">
-		<img src="/resources/Pics/mypic.jpg" style="width: 200px; height: auto; border-radius: 3px; border: 2px solid white; padding: 5px;" alt="My Picture" class="img-fluid">
-	</div>
-	</div>
-  </div>
-
-<div class="spacer_20px"></div>
-
-<div class="spacer_10px"></div>
-<h4 id="paragraph">A College student and currently learning C++!</h3>
-<hr style="height: 2px; border-top: 2px solid #ffffff1f; padding-left: 10px; padding-right: 10px;">
-
-<div class="spacer_20px"></div>
-<h4 id="paragraph"> Some fun facts about me: </h4>
-<hr style="height: 2px; border-top: 2px solid #ffffff1f; padding-left: 10px; padding-right: 10px;">
-<ul id="paragraph">
-	<li>I love Disney's film Frozen ❄️❄️❄️</li>
-	<li>I love to sleep</li>
-	<li>Plays CoDM 🔫 and Modern Warship 🚢 during pass time</li>
-	<li>But watching Youtube is life 😉</li>
-</ul>
+<div class="post-grid">
+    <a href="https://vince.fun/list.html" class="preview-box">
+		<img src="/resources/Pics/markdownlogo.png" alt="Post preview image" id="post-preview">
+		<p id="paragraph">Rendering tables and list using Markdown</p>
+	  </a>	  
   
-<div class="spacer_20px"></div>
+    <div class="spacer_20px"></div>
 
-<h4 id="paragraph">My fav stuffs in life are:</h4>
-<hr style="height: 2px; border-top: 2px solid #ffffff1f; padding-left: 10px; padding-right: 10px;">
-<ul id="paragraph">
-	<li>🍦 Ice cream</li>
-	<li>🐱 Cats </li>
-	<li>🖥️ PC </li>
-	<li>📁 Tech stuffs </li>
-	<li>👗 Dresses 🤩 </li>
-	<li>💊 E </li>
-</ul>
+    <a href="https://vince.fun/cat.html" class="preview-box">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Cats_Fauvism_Illustration_by_David_S._Soriano.png" alt="Post preview image" id="post-preview">
+      <p id="paragraph">Cats are one of the most popular pets in the world</p>
+    </a>
 
-<div class="spacer_20px"></div>
+    <div class="spacer_20px"></div>
 
-<h4 id="paragraph">Quote in life</h4>
-<hr style="height: 2px; border-top: 2px solid #ffffff1f; padding-left: 10px; padding-right: 10px;">
-<blockquote>	
-<p id="paragraph"><i>"Hard work never appreciated, only results matter"</i></p>
-</blockquote>
+    <a href="https://vince.fun/markdown.html" class="preview-box">
+      <img src="/resources/Pics/tableLogo.png" alt="Post preview image" id="post-preview">
+      <p id="paragraph">Markdown is a lightweight markup language that is commonly used to format plain text</p>
+    </a>
+
+    <div class="spacer_20px"></div>
+
+    <a href="https://vince.fun/frame.html" class="preview-box">
+      <img src="/resources/Pics/tableLogo.png" alt="Post preview image" id="post-preview">
+      <p id="paragraph">This is a Frameset navigation page</p>
+    </a>
+
+  </div>
+</div>
 
 <div class="spacer_20px"></div>
 
 <button onclick="toggleDiv()" type="button" class="btn btn-primary codeButton">View Source</button>
 <div id="snippet" style="display:none">
-    <script src="https://gist.github.com/elsaversailles/4d69f96e1bd43ae1fad0d5c2c06723a8.js"></script>
+    <script src="https://gist.github.com/elsaversailles/fcec13b85bb212d014986ca6057d4691.js"></script>
 </div>
 
 <script>
@@ -136,7 +122,6 @@ document.getElementById("prevLink").href = previousUrl;
   }
 }
 </script>
-
 
 <div class="footer_spacer"></div>
 	  

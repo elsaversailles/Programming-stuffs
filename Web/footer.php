@@ -13,7 +13,7 @@
     <button class="navbar-toggler d-lg-block" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand mx-auto" href="#" style="color: white; text-align: center;">Home
+    <a class="navbar-brand mx-auto" href="#" style="color: white; text-align: center;">
       <a href="#" id="prevLink"> <img src="resources/Pics/left-arrow.png" style="position: relative; top: 0; right: 0; width: 35px;">
       </a>
     </a> 
@@ -23,6 +23,15 @@
     </div>  
   </nav>
 
+<script>
+$.getJSON("pageTitle.json", function(data) {
+  var path = window.location.pathname;
+  var page = path.split("/").pop();
+  var title = data[page].title;
+  var url = data[page].url;
+  $("a.navbar-brand").text(title).attr("href", url);
+});
+</script>
 
 <script>
 $(function() {
@@ -69,61 +78,17 @@ document.getElementById("prevLink").href = previousUrl;
 			</li>
 		  </ul>
 		</div>
-	  </nav> 
+	  </nav>
 
-<h2 id="paragraph">I'm Elsa Versailles!</h2>
-<hr style="height: 2px; border-top: 2px solid #ffffff1f; padding-left: 10px; padding-right: 10px;">
-<div class="spacer_20px"></div>
-<div class="container">
-	<div class="row justify-content-center">
-	  <div class="col-12 col-md-6 text-center">
-		<img src="/resources/Pics/mypic.jpg" style="width: 200px; height: auto; border-radius: 3px; border: 2px solid white; padding: 5px;" alt="My Picture" class="img-fluid">
-	</div>
-	</div>
-  </div>
 
-<div class="spacer_20px"></div>
 
-<div class="spacer_10px"></div>
-<h4 id="paragraph">A College student and currently learning C++!</h3>
-<hr style="height: 2px; border-top: 2px solid #ffffff1f; padding-left: 10px; padding-right: 10px;">
 
-<div class="spacer_20px"></div>
-<h4 id="paragraph"> Some fun facts about me: </h4>
-<hr style="height: 2px; border-top: 2px solid #ffffff1f; padding-left: 10px; padding-right: 10px;">
-<ul id="paragraph">
-	<li>I love Disney's film Frozen ❄️❄️❄️</li>
-	<li>I love to sleep</li>
-	<li>Plays CoDM 🔫 and Modern Warship 🚢 during pass time</li>
-	<li>But watching Youtube is life 😉</li>
-</ul>
-  
-<div class="spacer_20px"></div>
 
-<h4 id="paragraph">My fav stuffs in life are:</h4>
-<hr style="height: 2px; border-top: 2px solid #ffffff1f; padding-left: 10px; padding-right: 10px;">
-<ul id="paragraph">
-	<li>🍦 Ice cream</li>
-	<li>🐱 Cats </li>
-	<li>🖥️ PC </li>
-	<li>📁 Tech stuffs </li>
-	<li>👗 Dresses 🤩 </li>
-	<li>💊 E </li>
-</ul>
-
-<div class="spacer_20px"></div>
-
-<h4 id="paragraph">Quote in life</h4>
-<hr style="height: 2px; border-top: 2px solid #ffffff1f; padding-left: 10px; padding-right: 10px;">
-<blockquote>	
-<p id="paragraph"><i>"Hard work never appreciated, only results matter"</i></p>
-</blockquote>
-
-<div class="spacer_20px"></div>
+<div class="spacer_60px"></div>
 
 <button onclick="toggleDiv()" type="button" class="btn btn-primary codeButton">View Source</button>
 <div id="snippet" style="display:none">
-    <script src="https://gist.github.com/elsaversailles/4d69f96e1bd43ae1fad0d5c2c06723a8.js"></script>
+    <script src="https://gist.github.com/elsaversailles/c6dc5e923a44e20771421d2ace5b37bf.js"></script>
 </div>
 
 <script>
@@ -137,9 +102,7 @@ document.getElementById("prevLink").href = previousUrl;
 }
 </script>
 
-
-<div class="footer_spacer"></div>
-	  
+	  <div class="footer_spacer"></div>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>

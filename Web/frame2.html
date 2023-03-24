@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            const contentframe = document.getElementById("contentframe");
+
+            sidebar.classList.toggle("hidden");
+            contentframe.classList.toggle("fullscreen");
+
+            sidebar.addEventListener("transitionend", function(event) {
+                if (sidebar.classList.contains("hidden")) {
+                    sidebar.remove();
+                    contentframe.style.left = "0";
+                }
+            }, { once: true });
+        }
+
+        window.onload = function() {
+            loadHome();
+        };
+
+        function loadHome() {
+            document.getElementById("contentframe").innerHTML = '<iframe src="index.html" width="100%" height="100%" frameborder="0"></iframe>';
+        }
+
+        function loadPost() {
+            document.getElementById("contentframe").innerHTML = '<iframe src="post.html" width="100%" height="100%" frameborder="0"></iframe>';
+        }
+
+        function loadGallery() {
+            document.getElementById("contentframe").innerHTML = '<iframe src="gallery.html" width="100%" height="100%" frameborder="0"></iframe>';
+        }
+
+        function loadAbout() {
+            document.getElementById("contentframe").innerHTML = '<iframe src="about.html" width="100%" height="100%" frameborder="0"></iframe>';
+        }
+    </script>
+</head>
+<body id="bodyframe">
+    <div id="sidebar">
+        <ul>
+            <li><a href="#" onclick="loadHome()">Home</a></li>
+            <li><a href="#" onclick="loadPost()">Posts</a></li>
+            <li><a href="#" onclick="loadGallery()">Gallery</a></li>
+            <li><a href="#" onclick="loadAbout()">About</a></li>
+            <button id="hideButton" class="btn btn-primary" onclick="toggleSidebar()">Hide</button>
+       
+
+		</ul>
+	</div>
+	<div id="contentframe"></div>
+
+
+</body>
+</html>

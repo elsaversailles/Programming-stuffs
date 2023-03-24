@@ -1,0 +1,341 @@
+.my-navbar {
+  background-color: #2196F3; /* pastel pink */
+}
+.container {
+  padding: 0 5px;
+}
+
+body {
+  background-color: #121212; /* change this to the color you want */
+}
+#navbarTop, navbarBottom {
+  background-color: #2196F3; /* change this to the color you want */
+}
+#navTopText, navBottomText {
+  color: #ffffff; /* change this to the color you want */
+}
+.nav-link img {
+  width: 30px;
+  height: 30px;
+}
+img.mypic{
+  width: 70px;
+  height: 70px;
+}
+img.bottomIcon {
+  filter: invert(100%);
+}
+#paragraph{
+  color: #ffffff;/* change this to the color you want */
+  margin: 0 5%; 
+}
+#paragraph1{/* list.html page */
+  color: #ffffff;
+  margin: 0 10px;
+}
+.spacer_20px {
+  height: 20px;
+}
+.spacer_60px {
+  height: 60px;
+}
+.spacer_10px {
+  height: 10px;
+}
+.footer_spacer{
+  height: 100px;
+}
+.preview-box {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-left: 10px;
+  max-width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #303030;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.preview-box:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.preview-box img {
+  width: 10%;
+  height: 10%;
+  object-fit: cover;
+}
+
+.preview-box p {
+  padding: 10px;
+  font-size: 1.2em;
+}
+
+.html-table{
+  color: #ffffff;
+  padding: 20px;
+}
+
+.html-list{
+  color: #ffffff;
+  padding: 10px;
+}
+
+#table{
+  padding: 10px;
+  font-size: 1.2em;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#list{
+  padding: 10px;
+  color: #ffffff;
+  display: flex;
+}
+
+#list1{
+  padding: 10px;
+  color: #ffffff;
+  display: flex;
+}
+
+
+@media screen and (max-width: 768px) {
+  .preview-box {
+    max-width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+  
+  .preview-box img {
+    display: block;
+    margin: 10px;
+    width: 50%;
+    height: auto;
+    object-fit: center;
+  }
+  
+}
+
+.codeButton{
+  margin: 10px;
+}
+
+.post-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-container {
+  display: inline-block;
+  margin: 10px;
+  position: relative;
+}
+
+/* Style for image thumbnail */
+.thumbnail {
+  cursor: pointer;
+  opacity: 0.6;
+  max-width: 250px;
+  max-height: 250px;
+  object-fit: contain;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.thumbnail:hover {
+  opacity: 1.0;
+}
+
+/* Style for enlarged image */
+.enlarged-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  display: none;
+}
+
+.enlarged-image img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+
+
+/* Style for close button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+
+/* start of frame css */
+#bodyframe {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background-color: #ccc;
+  padding: 20px;
+}
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#sidebar li {
+  margin-bottom: 10px;
+}
+#sidebar a {
+  display: block;
+  padding: 5px;
+  color: #333;
+  text-decoration: none;
+}
+#mainframe {
+  margin-left: 200px;
+  padding: 20px;
+}
+#contentframe {
+  width: calc(100% - 200px);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+}
+
+#sidebar {
+  position: fixed;
+  height: 100%;
+  width: 200px;
+  top: 0;
+  left: 0;
+  background-color: #f5f5f5;
+  padding: 20px;
+  transition: all 0.3s;
+  overflow-y: auto;
+}
+
+#sidebar.hidden {
+  left: -200px;
+}
+
+#contentframe {
+  position: absolute;
+  left: 200px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#contentframe.fullscreen {
+  left: 0;
+width: 100%;
+}
+
+/* Hide scrollbar on WebKit browsers */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar on Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar on Microsoft Edge and IE */
+body::-webkit-scrollbar {
+  width: 0.1em;
+  background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #000000;
+}
+/* end of frame css */
+
+
+@media (min-width: 0px) and (max-width: 900px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: #202020; /* BG color of hidden burger menu */
+    z-index: 9999;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .navbar-collapse.show {
+    transform: translateX(0%);
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    text-align: center;
+    padding-left: 20px;
+  }
+  #navBarItem{
+    text-align: left;
+    margin-top: 2.5rem;
+  }
+
+}
+
+@media (min-width: 901px) and (max-width: 4000px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100vh;
+    background-color: #202020; /* BG color of hidden burger menu */
+    z-index: 9999;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  #navBarItem{
+    margin-bottom: 30rem;
+  }
+  .navbar-collapse.show {
+    transform: translateX(0%);
+  }
+
+ 
+  .navbar-nav {
+    flex-direction: column;
+    text-align: center;
+    padding-left: 20px;
+  }
+
+}
