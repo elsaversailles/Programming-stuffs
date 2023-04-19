@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Home",
+    "url": "/index.html"
+  },
+  {
+    "title": "About",
+    "url": "/pages/about.php"
+  },
+  {
+    "title": "Posts",
+    "url": "/pages/post.php"
+  },
+  {
+    "title": "Categories",
+    "url": "#"
+  }
+]

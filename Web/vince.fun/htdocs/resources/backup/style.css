@@ -1,0 +1,93 @@
+.my-navbar {
+  background-color: #2196F3; /* pastel pink */
+}
+body {
+  background-color: #121212; /* change this to the color you want */
+}
+#navbarTop, navbarBottom {
+  background-color: #2196F3; /* change this to the color you want */
+}
+#navTopText, navBottomText {
+  color: #ffffff; /* change this to the color you want */
+}
+.nav-link img {
+  width: 30px;
+  height: 30px;
+}
+img.mypic{
+  width: 70px;
+  height: 70px;
+}
+img.bottomIcon {
+  filter: invert(100%);
+}
+#paragraph{
+  color: #ffffff;/* change this to the color you want */
+  margin: 0 5%; 
+}
+.spacer_20px {
+  height: 20px;
+}
+.spacer_10px {
+  height: 10px;
+}
+.footer_spacer{
+  height: 100px;
+}
+.preview-box {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 10px;
+  max-width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  color: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.preview-box:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.preview-box img {
+  width: 10%;
+  height: 10%;
+  object-fit: cover;
+}
+
+.preview-box p {
+  padding: 10px;
+  font-size: 1.2em;
+}
+
+@media screen and (max-width: 768px) {
+  .preview-box {
+    max-width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+  
+  .preview-box img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.post-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+
+/*
+html {
+  overflow-y: scroll;
+}
+*/
