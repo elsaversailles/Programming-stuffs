@@ -1,0 +1,209 @@
+int IRpin1 = 4;
+int IRpin2 = 5;
+int motor1 = 22;
+int motor2 = 24;
+int solenoid1 = 28;
+int solenoid2 = 26;
+int wash1 = 30;
+int wash2 = 32;
+
+bool cupdetected1 = false;
+bool cupremoved1 = true;
+bool ready1 = true;
+bool done1 = false;
+
+bool cupdetected2 = false;
+bool cupremoved2 = true;
+bool ready2 = true;
+bool done2 = false;
+
+//Receiving data
+String command = "";
+
+//flowrate
+long pulseCount1  = 0;
+long pulseCount2  = 0;
+float mL1         = 0;
+float mL2         = 0;
+bool read1 = false;
+bool read2 = false;
+
+void Pulse1() {
+  if (read1){
+    pulseCount1++;
+  }
+}
+//reading sensor 2
+void Pulse2() {
+  if (read2){
+    pulseCount2++;
+  }
+}
+
+void setup() {
+  attachInterrupt(0, Pulse1, RISING); //pin 2
+  attachInterrupt(1, Pulse2, RISING); //pin 3
+  Serial.begin(9600);
+  pinMode(IRpin1, INPUT);
+  pinMode(IRpin2, INPUT);
+  pinMode(motor1, OUTPUT);
+  pinMode(motor2, OUTPUT);
+  pinMode(solenoid1, OUTPUT);
+  pinMode(solenoid2, OUTPUT);
+  pinMode(wash1, OUTPUT);
+  pinMode(wash2, OUTPUT);
+}
+
+void startup() {
+  Serial.println("Ready");
+  digitalWrite(motor1, HIGH);
+  digitalWrite(motor2, HIGH);
+  digitalWrite(solenoid1, HIGH);
+  digitalWrite(solenoid2, HIGH);
+  digitalWrite(wash1, HIGH);
+  digitalWrite(wash2, HIGH);
+  delay(1000);
+}
+
+void cleaning1() {
+  delay(3000);
+  digitalWrite(motor1, HIGH);
+  digitalWrite(wash1, LOW);
+  Serial.println("Cleaning 1");
+  delay(2000);
+  digitalWrite(wash1, HIGH);
+  ready1 = true;
+}
+
+void cleaning2() {
+  delay(3000);
+  digitalWrite(motor2, HIGH);
+  digitalWrite(wash2, LOW);
+  Serial.println("Cleaning 2");
+  delay(2000);
+  digitalWrite(wash2, HIGH);
+  ready2 = true;
+}
+
+void dispense1(){
+  read1 = true;
+  digitalWrite(wash1, HIGH);
+  digitalWrite(motor1, LOW);
+  digitalWrite(solenoid1, LOW);
+  Serial.print("ml: ");
+  Serial.println(mL1) ;
+}
+
+void loop() {
+  int val1 = digitalRead(IRpin1);
+  int val2 = digitalRead(IRpin2);
+
+  mL1 = (pulseCount1 / 13154.000) * 1000.0; // change the number before the / to the desired calibration
+  mL2 = (pulseCount2 / 33082.000)  * 1000.0; // change the number before the / to the desired calibration
+
+  Serial.print("ml1: ");
+  Serial.print(mL1);
+  Serial.print("ml2: ");
+  Serial.println(mL2);
+  Serial.print("pulse1: ");
+  Serial.print(pulseCount1);
+  Serial.print("pulse2: ");
+  Serial.println(pulseCount2);
+  delay(500);
+
+  while (val1 == HIGH && val2 == HIGH) {
+    startup();
+    break;
+  }
+
+  if (Serial.available() > 0) {
+    command = Serial.readStringUntil('\n');
+    command.trim();
+    
+
+// 
+if (command == "00") {
+    Serial.println("Strawberry Banana Yogurt, 300ml");
+
+    // Wait for the IR sensor to detect an object
+    while (val1 == HIGH) {
+        val1 = digitalRead(IRpin1);
+        Serial.println("Place your cup.");
+	delay(500); //delay
+    }
+    
+    // Reset mL1 and pulseCount1
+    mL1 = 0;
+    pulseCount1 = 0; //flow meter
+    
+    read1 = true;
+    digitalWrite(wash1, HIGH);
+    digitalWrite(motor1, LOW);
+    digitalWrite(solenoid1, LOW);
+    
+    // Collect pulses and calculate mL1
+    while (mL1 <= 1000) {
+        mL1 = (pulseCount1 / 13154.000) * 1000.0;
+       // delay(100);
+    }
+    
+    // At this point, mL1 is <= 1000
+    read1 = false;
+    digitalWrite(motor1, HIGH);
+    digitalWrite(solenoid1, HIGH);
+    delay(3000);
+    pulseCount1 = 0;
+    Serial.println("You can remove the cup now");
+    done1 = true;
+}
+//
+
+
+    if (command == "10") {
+      Serial.println("Mango Yogurt, 300ml");
+
+      // Wait for the IR sensor to detect an object
+      while (val2 == HIGH) {
+        val2 = digitalRead(IRpin2);
+        Serial.println("Place your cup.");
+        delay(1000);
+      }
+
+      Serial.println("Dispensing...");
+      read2 = true;
+      digitalWrite(wash2, HIGH);
+      digitalWrite(motor2, LOW);
+      digitalWrite(solenoid2, LOW);
+      Serial.print("ml: ");
+      Serial.println(mL2);
+    }  
+      if (mL2 >= 300) {
+        read2 = false;
+        digitalWrite(motor2, HIGH);
+        digitalWrite(solenoid2, HIGH);
+        delay(3000);
+        pulseCount2 = 0;
+        Serial.println("You can remove the cup now");
+        done2 = true;
+      }
+    delay(100);
+
+    //cleaning station1
+    if (val1 == HIGH  && done1 ) {
+      Serial.println("Station:1 Cleaning Activated");
+      cleaning1();
+      cupremoved1 = true;
+      cupdetected1 = false;
+    }
+
+    //cleaning station2
+    if (val2 == HIGH && done2 ) {
+      Serial.println("Station:2 Cleaning Activated");
+      cleaning2();
+      cupremoved2 = true;
+      cupdetected2 = false;
+    }
+  }
+}
+
+  
